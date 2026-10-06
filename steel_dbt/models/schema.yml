@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: stg_energy
+    description: "Cleaned energy readings (15-min intervals) from the UCI steel dataset."
+    columns:
+      - name: ts
+        description: "Reading timestamp"
+        tests: [unique, not_null]
+      - name: usage_kwh
+        tests: [not_null]
+      - name: load_type
+        tests:
+          - accepted_values:
+              values: ["Light_Load", "Medium_Load", "Maximum_Load"]
+
+  - name: stg_production
+    description: "Simulated production and sensor data, deduplicated, with sensor anomalies flagged."
+    columns:
+      - name: ts
+        tests: [unique, not_null]
+      - name: tonnes_produced
+        tests: [not_null]
+
+  - name: silver_plant
+    description: "Energy and production joined on timestamp, with shift derived from hour."
+    columns:
+      - name: ts
+        tests: [unique, not_null]
+      - name: shift
+        tests:
+          - accepted_values:
+              values: ["A", "B", "C"]
+
+  - name: gold_daily_kpis
+    description: "Daily energy, production, downtime and defect KPIs."
+    columns:
+      - name: date
+        tests: [unique, not_null]
+
+  - name: gold_load_type_summary
+    description: "Share of time and energy by load type, with energy per tonne."
+
+  - name: gold_downtime_pareto
+    description: "Downtime minutes and idle energy by cause."
+
+  - name: gold_shift_summary
+    description: "Energy per tonne, downtime and defects by shift."

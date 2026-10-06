@@ -1,0 +1,6 @@
+steel_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/steel.duckdb

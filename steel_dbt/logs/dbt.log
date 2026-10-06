@@ -1,0 +1,1616 @@
+[0m21:43:45.899117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F42F4CE270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F42C3B51D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F431AB7C50>]}
+
+
+============================== 21:43:45.916457 | 9fa31e21-4296-497a-bc72-0a9851735471 ==============================
+[0m21:43:45.916457 [info ] [MainThread]: Running with dbt=1.12.5
+[0m21:43:45.918202 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt debug', 'log_path': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt\\logs'}
+[0m21:43:45.987945 [info ] [MainThread]: dbt version: 1.12.5
+[0m21:43:45.989217 [info ] [MainThread]: python version: 3.13.7
+[0m21:43:45.990769 [info ] [MainThread]: python path: C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Scripts\python.exe
+[0m21:43:45.991986 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m21:43:46.667304 [info ] [MainThread]: Using profiles dir at C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt
+[0m21:43:46.669075 [info ] [MainThread]: Using profiles.yml file at C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\profiles.yml
+[0m21:43:46.670558 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\dbt_project.yml
+[0m21:43:46.711658 [info ] [MainThread]: adapter type: duckdb
+[0m21:43:46.713239 [info ] [MainThread]: adapter version: 1.11.0
+[0m21:43:47.252657 [info ] [MainThread]: Configuration:
+[0m21:43:47.275784 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:43:47.289646 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m21:43:47.300303 [info ] [MainThread]: Required dependencies:
+[0m21:43:47.308590 [debug] [MainThread]: Executing "git --help"
+[0m21:43:47.506866 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:43:47.508458 [debug] [MainThread]: STDERR: "b''"
+[0m21:43:47.510072 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:43:47.511958 [info ] [MainThread]: Connection:
+[0m21:43:47.513379 [info ] [MainThread]:   database: steel
+[0m21:43:47.517729 [info ] [MainThread]:   schema: main
+[0m21:43:47.519810 [info ] [MainThread]:   path: ../data/steel.duckdb
+[0m21:43:47.521024 [info ] [MainThread]:   config_options: None
+[0m21:43:47.522248 [info ] [MainThread]:   extensions: None
+[0m21:43:47.523672 [info ] [MainThread]:   settings: {}
+[0m21:43:47.524888 [info ] [MainThread]:   external_root: .
+[0m21:43:47.526848 [info ] [MainThread]:   use_credential_provider: None
+[0m21:43:47.528185 [info ] [MainThread]:   attach: None
+[0m21:43:47.530039 [info ] [MainThread]:   filesystems: None
+[0m21:43:47.543060 [info ] [MainThread]:   remote: None
+[0m21:43:47.546057 [info ] [MainThread]:   plugins: None
+[0m21:43:47.551682 [info ] [MainThread]:   disable_transactions: False
+[0m21:43:47.554027 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:43:48.680782 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m21:43:54.849519 [debug] [MainThread]: Using duckdb connection "debug"
+[0m21:43:54.850284 [debug] [MainThread]: On debug: select 1 as id
+[0m21:43:54.850882 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:43:54.911707 [debug] [MainThread]: SQL status: OK in 0.061 seconds
+[0m21:43:54.914359 [debug] [MainThread]: On debug: Close
+[0m21:43:54.915903 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m21:43:54.916821 [info ] [MainThread]: [32mAll checks passed![0m
+[0m21:43:54.919194 [debug] [MainThread]: Command `dbt debug` succeeded at 21:43:54.918939 after 9.45 seconds
+[0m21:43:54.919917 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:43:54.920617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F431C7B820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F431F49490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F431EA4490>]}
+[0m21:43:54.921388 [debug] [MainThread]: Flushing usage events
+[0m21:43:56.694131 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:44:04.862947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD781E270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD9E73ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD9E73B10>]}
+
+
+============================== 21:44:04.872087 | bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a ==============================
+[0m21:44:04.872087 [info ] [MainThread]: Running with dbt=1.12.5
+[0m21:44:04.873482 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt\\logs'}
+[0m21:44:05.598285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD7D3A650>]}
+[0m21:44:05.763535 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD5EC8050>]}
+[0m21:44:05.769847 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:44:06.484413 [debug] [MainThread]: checksum: 5460e6137fb750d7c78aa81e5c33d03b438ee5a9170cdf245c7aef95a9bf8fbb, vars: {}, profile: steel_dbt, target: dev, version: 1.12.5
+[0m21:44:06.486443 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m21:44:06.487454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD9F49150>]}
+[0m21:44:13.704373 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on 'stg_energy' in
+package 'steel_dbt' (models\schema.yml). Arguments to generic tests should be
+nested under the `arguments` property.
+[0m21:44:13.705714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD9DFFA70>]}
+[0m21:44:14.017561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDA96AEB0>]}
+[0m21:44:14.505038 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\manifest.json
+[0m21:44:14.563675 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\semantic_manifest.json
+[0m21:44:14.676761 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\osi_document.json
+[0m21:44:14.742248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBA671E0>]}
+[0m21:44:14.744262 [info ] [MainThread]: Found 7 models, 13 data tests, 500 macros
+[0m21:44:14.748296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDA9CB7D0>]}
+[0m21:44:14.755936 [info ] [MainThread]: 
+[0m21:44:14.757278 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:44:14.758579 [info ] [MainThread]: 
+[0m21:44:14.762926 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:44:14.791296 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_steel'
+[0m21:44:15.150760 [debug] [ThreadPool]: Using duckdb connection "list_steel"
+[0m21:44:15.152655 [debug] [ThreadPool]: On list_steel: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "connection_name": "list_steel"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"steel"'
+    
+  
+  
+[0m21:44:15.154262 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:44:15.269278 [debug] [ThreadPool]: SQL status: OK in 0.115 seconds
+[0m21:44:15.274378 [debug] [ThreadPool]: On list_steel: Close
+[0m21:44:15.276828 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_steel, now create_steel_main)
+[0m21:44:15.278715 [debug] [ThreadPool]: Creating schema "database: "steel"
+schema: "main"
+"
+[0m21:44:15.308246 [debug] [ThreadPool]: Using duckdb connection "create_steel_main"
+[0m21:44:15.310028 [debug] [ThreadPool]: On create_steel_main: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "connection_name": "create_steel_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='steel'
+        and type != 'duckdb'
+    
+  
+[0m21:44:15.312008 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:44:15.316131 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m21:44:15.320603 [debug] [ThreadPool]: Using duckdb connection "create_steel_main"
+[0m21:44:15.321743 [debug] [ThreadPool]: On create_steel_main: BEGIN
+[0m21:44:15.323446 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:44:15.324579 [debug] [ThreadPool]: Using duckdb connection "create_steel_main"
+[0m21:44:15.325644 [debug] [ThreadPool]: On create_steel_main: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "connection_name": "create_steel_main"} */
+
+    
+    
+        create schema if not exists "steel"."main"
+    
+[0m21:44:15.329067 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m21:44:15.332551 [debug] [ThreadPool]: On create_steel_main: COMMIT
+[0m21:44:15.335426 [debug] [ThreadPool]: Using duckdb connection "create_steel_main"
+[0m21:44:15.337113 [debug] [ThreadPool]: On create_steel_main: COMMIT
+[0m21:44:15.339209 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:44:15.340556 [debug] [ThreadPool]: On create_steel_main: Close
+[0m21:44:15.348677 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_steel_main'
+[0m21:44:15.364916 [debug] [ThreadPool]: Using duckdb connection "list_steel_main"
+[0m21:44:15.366134 [debug] [ThreadPool]: On list_steel_main: BEGIN
+[0m21:44:15.367087 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:44:15.368770 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m21:44:15.369727 [debug] [ThreadPool]: Using duckdb connection "list_steel_main"
+[0m21:44:15.370691 [debug] [ThreadPool]: On list_steel_main: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "connection_name": "list_steel_main"} */
+select
+      'steel' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'steel'
+  
+[0m21:44:15.390812 [debug] [ThreadPool]: SQL status: OK in 0.019 seconds
+[0m21:44:15.394647 [debug] [ThreadPool]: On list_steel_main: ROLLBACK
+[0m21:44:15.396520 [debug] [ThreadPool]: On list_steel_main: Close
+[0m21:44:15.399025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDAA0ABA0>]}
+[0m21:44:15.400452 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:15.401182 [debug] [MainThread]: On master: BEGIN
+[0m21:44:15.401925 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:44:15.403633 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m21:44:15.404671 [debug] [MainThread]: On master: COMMIT
+[0m21:44:15.405555 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:15.406425 [debug] [MainThread]: On master: COMMIT
+[0m21:44:15.407986 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:44:15.408762 [debug] [MainThread]: On master: Close
+[0m21:44:15.439595 [debug] [Thread-1 (]: Began running node model.steel_dbt.stg_energy
+[0m21:44:15.441440 [info ] [Thread-1 (]: 1 of 7 START sql view model main.stg_energy .................................... [RUN]
+[0m21:44:15.445155 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.steel_dbt.stg_energy'
+[0m21:44:15.446791 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.stg_energy
+[0m21:44:15.469464 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.stg_energy"
+[0m21:44:15.479474 [debug] [Thread-1 (]: Began executing node model.steel_dbt.stg_energy
+[0m21:44:15.652370 [debug] [Thread-1 (]: Writing runtime sql for node "model.steel_dbt.stg_energy"
+[0m21:44:15.663945 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_energy"
+[0m21:44:15.665598 [debug] [Thread-1 (]: On model.steel_dbt.stg_energy: BEGIN
+[0m21:44:15.667235 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:44:15.669941 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:15.671031 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_energy"
+[0m21:44:15.672359 [debug] [Thread-1 (]: On model.steel_dbt.stg_energy: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.stg_energy"} */
+
+  
+  create view "steel"."main"."stg_energy__dbt_tmp" as (
+    with raw as (
+    select *
+    from read_csv(
+        '../data/raw/Steel_industry_data.csv',
+        header = true,
+        all_varchar = true,
+        names = [
+            'date', 'usage_kwh', 'lagging_reactive_kvarh', 'leading_reactive_kvarh',
+            'co2_tco2', 'lagging_pf', 'leading_pf', 'nsm',
+            'week_status', 'day_of_week', 'load_type'
+        ]
+    )
+)
+
+select
+    strptime(date, '%d/%m/%Y %H:%M') as ts,
+    cast(usage_kwh as double) as usage_kwh,
+    cast(co2_tco2 as double) as co2_tco2,
+    load_type
+from raw
+where date is not null
+  and cast(usage_kwh as double) >= 0
+qualify row_number() over (partition by date order by date) = 1
+  );
+
+[0m21:44:15.889806 [debug] [Thread-1 (]: SQL status: OK in 0.216 seconds
+[0m21:44:15.915307 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_energy"
+[0m21:44:15.917412 [debug] [Thread-1 (]: On model.steel_dbt.stg_energy: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.stg_energy"} */
+alter view "steel"."main"."stg_energy__dbt_tmp" rename to "stg_energy"
+[0m21:44:15.920548 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:15.968216 [debug] [Thread-1 (]: On model.steel_dbt.stg_energy: COMMIT
+[0m21:44:15.969722 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_energy"
+[0m21:44:15.971419 [debug] [Thread-1 (]: On model.steel_dbt.stg_energy: COMMIT
+[0m21:44:15.980684 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m21:44:15.994232 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_energy"
+[0m21:44:15.995682 [debug] [Thread-1 (]: On model.steel_dbt.stg_energy: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.stg_energy"} */
+
+      drop view if exists "steel"."main"."stg_energy__dbt_backup" cascade
+    
+[0m21:44:15.998137 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:16.007243 [debug] [Thread-1 (]: On model.steel_dbt.stg_energy: Close
+[0m21:44:16.013247 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD7CE3930>]}
+[0m21:44:16.016145 [info ] [Thread-1 (]: 1 of 7 OK created sql view model main.stg_energy ............................... [[32mOK[0m in 0.57s]
+[0m21:44:16.020029 [debug] [Thread-1 (]: Finished running node model.steel_dbt.stg_energy
+[0m21:44:16.023205 [debug] [Thread-1 (]: Began running node model.steel_dbt.stg_production
+[0m21:44:16.025365 [info ] [Thread-1 (]: 2 of 7 START sql view model main.stg_production ................................ [RUN]
+[0m21:44:16.027372 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.stg_energy, now model.steel_dbt.stg_production)
+[0m21:44:16.028924 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.stg_production
+[0m21:44:16.032460 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.stg_production"
+[0m21:44:16.035440 [debug] [Thread-1 (]: Began executing node model.steel_dbt.stg_production
+[0m21:44:16.044275 [debug] [Thread-1 (]: Writing runtime sql for node "model.steel_dbt.stg_production"
+[0m21:44:16.047581 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_production"
+[0m21:44:16.049380 [debug] [Thread-1 (]: On model.steel_dbt.stg_production: BEGIN
+[0m21:44:16.051389 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:16.055373 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m21:44:16.057404 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_production"
+[0m21:44:16.059288 [debug] [Thread-1 (]: On model.steel_dbt.stg_production: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.stg_production"} */
+
+  
+  create view "steel"."main"."stg_production__dbt_tmp" as (
+    with raw as (
+    select * from read_csv_auto('../data/raw/production.csv')
+)
+
+select
+    cast(ts as timestamp) as ts,
+    tonnes_produced,
+    case when furnace_temp_c between 800 and 1800 then furnace_temp_c end as furnace_temp_c,
+    (furnace_temp_c is not null and furnace_temp_c not between 800 and 1800) as is_sensor_anomaly,
+    cast(is_downtime as boolean) as is_downtime,
+    nullif(cast(downtime_reason as varchar), '') as downtime_reason,
+    defect_count,
+    nullif(cast(defect_type as varchar), '') as defect_type
+from raw
+qualify row_number() over (partition by cast(ts as timestamp) order by ts) = 1
+  );
+
+[0m21:44:16.362978 [debug] [Thread-1 (]: SQL status: OK in 0.300 seconds
+[0m21:44:16.370328 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_production"
+[0m21:44:16.371488 [debug] [Thread-1 (]: On model.steel_dbt.stg_production: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.stg_production"} */
+alter view "steel"."main"."stg_production__dbt_tmp" rename to "stg_production"
+[0m21:44:16.373391 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:16.378125 [debug] [Thread-1 (]: On model.steel_dbt.stg_production: COMMIT
+[0m21:44:16.379280 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_production"
+[0m21:44:16.381024 [debug] [Thread-1 (]: On model.steel_dbt.stg_production: COMMIT
+[0m21:44:16.385681 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:16.390194 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.stg_production"
+[0m21:44:16.391311 [debug] [Thread-1 (]: On model.steel_dbt.stg_production: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.stg_production"} */
+
+      drop view if exists "steel"."main"."stg_production__dbt_backup" cascade
+    
+[0m21:44:16.393185 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:16.396910 [debug] [Thread-1 (]: On model.steel_dbt.stg_production: Close
+[0m21:44:16.398522 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBCC88D0>]}
+[0m21:44:16.400301 [info ] [Thread-1 (]: 2 of 7 OK created sql view model main.stg_production ........................... [[32mOK[0m in 0.37s]
+[0m21:44:16.401930 [debug] [Thread-1 (]: Finished running node model.steel_dbt.stg_production
+[0m21:44:16.403768 [debug] [Thread-1 (]: Began running node model.steel_dbt.silver_plant
+[0m21:44:16.405103 [info ] [Thread-1 (]: 3 of 7 START sql table model main.silver_plant ................................. [RUN]
+[0m21:44:16.406904 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.stg_production, now model.steel_dbt.silver_plant)
+[0m21:44:16.408084 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.silver_plant
+[0m21:44:16.415234 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.silver_plant"
+[0m21:44:16.419135 [debug] [Thread-1 (]: Began executing node model.steel_dbt.silver_plant
+[0m21:44:16.671058 [debug] [Thread-1 (]: Writing runtime sql for node "model.steel_dbt.silver_plant"
+[0m21:44:16.676368 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.silver_plant"
+[0m21:44:16.678294 [debug] [Thread-1 (]: On model.steel_dbt.silver_plant: BEGIN
+[0m21:44:16.679551 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:16.681648 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:16.683199 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.silver_plant"
+[0m21:44:16.684531 [debug] [Thread-1 (]: On model.steel_dbt.silver_plant: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.silver_plant"} */
+
+    
+
+    create  table
+      "steel"."main"."silver_plant__dbt_tmp"
+  
+    
+    as (
+      select
+    e.ts,
+    cast(e.ts as date) as date,
+    e.usage_kwh,
+    e.co2_tco2,
+    e.load_type,
+    p.tonnes_produced,
+    p.furnace_temp_c,
+    p.is_sensor_anomaly,
+    p.is_downtime,
+    p.downtime_reason,
+    p.defect_count,
+    p.defect_type,
+    case
+        when hour(e.ts) >= 6 and hour(e.ts) < 14 then 'A'
+        when hour(e.ts) >= 14 and hour(e.ts) < 22 then 'B'
+        else 'C'
+    end as shift
+from "steel"."main"."stg_energy" e
+join "steel"."main"."stg_production" p on e.ts = p.ts
+    );
+    
+  
+[0m21:44:17.407618 [debug] [Thread-1 (]: SQL status: OK in 0.721 seconds
+[0m21:44:17.417235 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.silver_plant"
+[0m21:44:17.418397 [debug] [Thread-1 (]: On model.steel_dbt.silver_plant: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.silver_plant"} */
+alter table "steel"."main"."silver_plant__dbt_tmp" rename to "silver_plant"
+[0m21:44:17.420514 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.439068 [debug] [Thread-1 (]: On model.steel_dbt.silver_plant: COMMIT
+[0m21:44:17.440322 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.silver_plant"
+[0m21:44:17.441487 [debug] [Thread-1 (]: On model.steel_dbt.silver_plant: COMMIT
+[0m21:44:17.489041 [debug] [Thread-1 (]: SQL status: OK in 0.046 seconds
+[0m21:44:17.494697 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.silver_plant"
+[0m21:44:17.496208 [debug] [Thread-1 (]: On model.steel_dbt.silver_plant: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.silver_plant"} */
+
+      drop table if exists "steel"."main"."silver_plant__dbt_backup" cascade
+    
+[0m21:44:17.499116 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.505829 [debug] [Thread-1 (]: On model.steel_dbt.silver_plant: Close
+[0m21:44:17.507970 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBCB9320>]}
+[0m21:44:17.511288 [info ] [Thread-1 (]: 3 of 7 OK created sql table model main.silver_plant ............................ [[32mOK[0m in 1.10s]
+[0m21:44:17.514951 [debug] [Thread-1 (]: Finished running node model.steel_dbt.silver_plant
+[0m21:44:17.517314 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_daily_kpis
+[0m21:44:17.518775 [info ] [Thread-1 (]: 4 of 7 START sql table model main.gold_daily_kpis .............................. [RUN]
+[0m21:44:17.520432 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.silver_plant, now model.steel_dbt.gold_daily_kpis)
+[0m21:44:17.521832 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_daily_kpis
+[0m21:44:17.527566 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_daily_kpis"
+[0m21:44:17.531745 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_daily_kpis
+[0m21:44:17.542803 [debug] [Thread-1 (]: Writing runtime sql for node "model.steel_dbt.gold_daily_kpis"
+[0m21:44:17.549009 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_daily_kpis"
+[0m21:44:17.550311 [debug] [Thread-1 (]: On model.steel_dbt.gold_daily_kpis: BEGIN
+[0m21:44:17.551512 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:17.553524 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:17.554800 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_daily_kpis"
+[0m21:44:17.556121 [debug] [Thread-1 (]: On model.steel_dbt.gold_daily_kpis: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_daily_kpis"} */
+
+    
+
+    create  table
+      "steel"."main"."gold_daily_kpis__dbt_tmp"
+  
+    
+    as (
+      select
+    date,
+    sum(usage_kwh) as total_kwh,
+    sum(tonnes_produced) as total_tonnes,
+    sum(usage_kwh) / nullif(sum(tonnes_produced), 0) as kwh_per_tonne,
+    sum(co2_tco2) as total_co2_t,
+    sum(case when is_downtime then 15 else 0 end) as downtime_minutes,
+    sum(defect_count) as defects,
+    100.0 * sum(defect_count) / nullif(sum(tonnes_produced), 0) as defects_per_100t,
+    avg(furnace_temp_c) as avg_furnace_temp_c
+from "steel"."main"."silver_plant"
+group by date
+order by date
+    );
+    
+  
+[0m21:44:17.579795 [debug] [Thread-1 (]: SQL status: OK in 0.022 seconds
+[0m21:44:17.588205 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_daily_kpis"
+[0m21:44:17.589455 [debug] [Thread-1 (]: On model.steel_dbt.gold_daily_kpis: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_daily_kpis"} */
+alter table "steel"."main"."gold_daily_kpis__dbt_tmp" rename to "gold_daily_kpis"
+[0m21:44:17.592285 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.610208 [debug] [Thread-1 (]: On model.steel_dbt.gold_daily_kpis: COMMIT
+[0m21:44:17.612927 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_daily_kpis"
+[0m21:44:17.614744 [debug] [Thread-1 (]: On model.steel_dbt.gold_daily_kpis: COMMIT
+[0m21:44:17.619124 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:17.624206 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_daily_kpis"
+[0m21:44:17.625532 [debug] [Thread-1 (]: On model.steel_dbt.gold_daily_kpis: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_daily_kpis"} */
+
+      drop table if exists "steel"."main"."gold_daily_kpis__dbt_backup" cascade
+    
+[0m21:44:17.627528 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.631769 [debug] [Thread-1 (]: On model.steel_dbt.gold_daily_kpis: Close
+[0m21:44:17.633272 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBCB7E90>]}
+[0m21:44:17.634618 [info ] [Thread-1 (]: 4 of 7 OK created sql table model main.gold_daily_kpis ......................... [[32mOK[0m in 0.11s]
+[0m21:44:17.636902 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_daily_kpis
+[0m21:44:17.637883 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_downtime_pareto
+[0m21:44:17.639280 [info ] [Thread-1 (]: 5 of 7 START sql table model main.gold_downtime_pareto ......................... [RUN]
+[0m21:44:17.640878 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.gold_daily_kpis, now model.steel_dbt.gold_downtime_pareto)
+[0m21:44:17.642129 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_downtime_pareto
+[0m21:44:17.648835 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_downtime_pareto"
+[0m21:44:17.653321 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_downtime_pareto
+[0m21:44:17.663908 [debug] [Thread-1 (]: Writing runtime sql for node "model.steel_dbt.gold_downtime_pareto"
+[0m21:44:17.667422 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_downtime_pareto"
+[0m21:44:17.668707 [debug] [Thread-1 (]: On model.steel_dbt.gold_downtime_pareto: BEGIN
+[0m21:44:17.669717 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:17.671396 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:17.672558 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_downtime_pareto"
+[0m21:44:17.673517 [debug] [Thread-1 (]: On model.steel_dbt.gold_downtime_pareto: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_downtime_pareto"} */
+
+    
+
+    create  table
+      "steel"."main"."gold_downtime_pareto__dbt_tmp"
+  
+    
+    as (
+      select
+    downtime_reason,
+    count(*) * 15 as downtime_minutes,
+    sum(usage_kwh) as idle_kwh_wasted
+from "steel"."main"."silver_plant"
+where is_downtime
+group by downtime_reason
+order by downtime_minutes desc
+    );
+    
+  
+[0m21:44:17.688320 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m21:44:17.701212 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_downtime_pareto"
+[0m21:44:17.705083 [debug] [Thread-1 (]: On model.steel_dbt.gold_downtime_pareto: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_downtime_pareto"} */
+alter table "steel"."main"."gold_downtime_pareto__dbt_tmp" rename to "gold_downtime_pareto"
+[0m21:44:17.707951 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.716936 [debug] [Thread-1 (]: On model.steel_dbt.gold_downtime_pareto: COMMIT
+[0m21:44:17.718387 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_downtime_pareto"
+[0m21:44:17.720020 [debug] [Thread-1 (]: On model.steel_dbt.gold_downtime_pareto: COMMIT
+[0m21:44:17.724327 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:17.729465 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_downtime_pareto"
+[0m21:44:17.730869 [debug] [Thread-1 (]: On model.steel_dbt.gold_downtime_pareto: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_downtime_pareto"} */
+
+      drop table if exists "steel"."main"."gold_downtime_pareto__dbt_backup" cascade
+    
+[0m21:44:17.732858 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.736616 [debug] [Thread-1 (]: On model.steel_dbt.gold_downtime_pareto: Close
+[0m21:44:17.738493 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBCB7A10>]}
+[0m21:44:17.740256 [info ] [Thread-1 (]: 5 of 7 OK created sql table model main.gold_downtime_pareto .................... [[32mOK[0m in 0.10s]
+[0m21:44:17.742478 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_downtime_pareto
+[0m21:44:17.744071 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_load_type_summary
+[0m21:44:17.747679 [info ] [Thread-1 (]: 6 of 7 START sql table model main.gold_load_type_summary ....................... [RUN]
+[0m21:44:17.749672 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.gold_downtime_pareto, now model.steel_dbt.gold_load_type_summary)
+[0m21:44:17.750803 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_load_type_summary
+[0m21:44:17.756121 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_load_type_summary"
+[0m21:44:17.761126 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_load_type_summary
+[0m21:44:17.772094 [debug] [Thread-1 (]: Writing runtime sql for node "model.steel_dbt.gold_load_type_summary"
+[0m21:44:17.776929 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_load_type_summary"
+[0m21:44:17.778333 [debug] [Thread-1 (]: On model.steel_dbt.gold_load_type_summary: BEGIN
+[0m21:44:17.779608 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:17.781686 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:17.782962 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_load_type_summary"
+[0m21:44:17.784305 [debug] [Thread-1 (]: On model.steel_dbt.gold_load_type_summary: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_load_type_summary"} */
+
+    
+
+    create  table
+      "steel"."main"."gold_load_type_summary__dbt_tmp"
+  
+    
+    as (
+      select
+    load_type,
+    count(*) as intervals,
+    100.0 * count(*) / sum(count(*)) over () as pct_intervals,
+    100.0 * sum(usage_kwh) / sum(sum(usage_kwh)) over () as pct_energy,
+    sum(usage_kwh) / nullif(sum(tonnes_produced), 0) as kwh_per_tonne
+from "steel"."main"."silver_plant"
+group by load_type
+    );
+    
+  
+[0m21:44:17.801448 [debug] [Thread-1 (]: SQL status: OK in 0.016 seconds
+[0m21:44:17.807785 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_load_type_summary"
+[0m21:44:17.809006 [debug] [Thread-1 (]: On model.steel_dbt.gold_load_type_summary: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_load_type_summary"} */
+alter table "steel"."main"."gold_load_type_summary__dbt_tmp" rename to "gold_load_type_summary"
+[0m21:44:17.811366 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.816733 [debug] [Thread-1 (]: On model.steel_dbt.gold_load_type_summary: COMMIT
+[0m21:44:17.817674 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_load_type_summary"
+[0m21:44:17.818731 [debug] [Thread-1 (]: On model.steel_dbt.gold_load_type_summary: COMMIT
+[0m21:44:17.822726 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:17.827014 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_load_type_summary"
+[0m21:44:17.828410 [debug] [Thread-1 (]: On model.steel_dbt.gold_load_type_summary: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_load_type_summary"} */
+
+      drop table if exists "steel"."main"."gold_load_type_summary__dbt_backup" cascade
+    
+[0m21:44:17.830434 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.834613 [debug] [Thread-1 (]: On model.steel_dbt.gold_load_type_summary: Close
+[0m21:44:17.836223 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBCB7FB0>]}
+[0m21:44:17.837847 [info ] [Thread-1 (]: 6 of 7 OK created sql table model main.gold_load_type_summary .................. [[32mOK[0m in 0.09s]
+[0m21:44:17.840033 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_load_type_summary
+[0m21:44:17.841375 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_shift_summary
+[0m21:44:17.842837 [info ] [Thread-1 (]: 7 of 7 START sql table model main.gold_shift_summary ........................... [RUN]
+[0m21:44:17.845849 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.gold_load_type_summary, now model.steel_dbt.gold_shift_summary)
+[0m21:44:17.847274 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_shift_summary
+[0m21:44:17.851807 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_shift_summary"
+[0m21:44:17.855100 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_shift_summary
+[0m21:44:17.864369 [debug] [Thread-1 (]: Writing runtime sql for node "model.steel_dbt.gold_shift_summary"
+[0m21:44:17.867726 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_shift_summary"
+[0m21:44:17.869317 [debug] [Thread-1 (]: On model.steel_dbt.gold_shift_summary: BEGIN
+[0m21:44:17.870360 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:17.871756 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.872688 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_shift_summary"
+[0m21:44:17.873609 [debug] [Thread-1 (]: On model.steel_dbt.gold_shift_summary: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_shift_summary"} */
+
+    
+
+    create  table
+      "steel"."main"."gold_shift_summary__dbt_tmp"
+  
+    
+    as (
+      select
+    shift,
+    sum(usage_kwh) / nullif(sum(tonnes_produced), 0) as kwh_per_tonne,
+    sum(case when is_downtime then 15 else 0 end) as downtime_minutes,
+    100.0 * sum(defect_count) / nullif(sum(tonnes_produced), 0) as defects_per_100t
+from "steel"."main"."silver_plant"
+group by shift
+order by shift
+    );
+    
+  
+[0m21:44:17.883086 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m21:44:17.889931 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_shift_summary"
+[0m21:44:17.891137 [debug] [Thread-1 (]: On model.steel_dbt.gold_shift_summary: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_shift_summary"} */
+alter table "steel"."main"."gold_shift_summary__dbt_tmp" rename to "gold_shift_summary"
+[0m21:44:17.893479 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.898487 [debug] [Thread-1 (]: On model.steel_dbt.gold_shift_summary: COMMIT
+[0m21:44:17.900475 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_shift_summary"
+[0m21:44:17.902086 [debug] [Thread-1 (]: On model.steel_dbt.gold_shift_summary: COMMIT
+[0m21:44:17.905638 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:17.909546 [debug] [Thread-1 (]: Using duckdb connection "model.steel_dbt.gold_shift_summary"
+[0m21:44:17.910903 [debug] [Thread-1 (]: On model.steel_dbt.gold_shift_summary: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "model.steel_dbt.gold_shift_summary"} */
+
+      drop table if exists "steel"."main"."gold_shift_summary__dbt_backup" cascade
+    
+[0m21:44:17.913102 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:44:17.916616 [debug] [Thread-1 (]: On model.steel_dbt.gold_shift_summary: Close
+[0m21:44:17.918002 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bb2d8ee9-095d-4c7d-bb2e-b4a6c2f26d0a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBCB61B0>]}
+[0m21:44:17.919346 [info ] [Thread-1 (]: 7 of 7 OK created sql table model main.gold_shift_summary ...................... [[32mOK[0m in 0.07s]
+[0m21:44:17.921079 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_shift_summary
+[0m21:44:17.924365 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:17.925340 [debug] [MainThread]: On master: BEGIN
+[0m21:44:17.926241 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:44:17.928303 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m21:44:17.929418 [debug] [MainThread]: On master: COMMIT
+[0m21:44:17.930246 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:17.930890 [debug] [MainThread]: On master: COMMIT
+[0m21:44:17.932404 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:44:17.933383 [debug] [MainThread]: On master: Close
+[0m21:44:17.934726 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:44:17.935688 [debug] [MainThread]: Connection 'create_steel_main' was properly closed.
+[0m21:44:17.936438 [debug] [MainThread]: Connection 'list_steel_main' was properly closed.
+[0m21:44:17.937058 [debug] [MainThread]: Connection 'model.steel_dbt.gold_shift_summary' was properly closed.
+[0m21:44:17.937885 [info ] [MainThread]: 
+[0m21:44:17.938944 [info ] [MainThread]: Finished running 5 table models, 2 view models in 0 hours 0 minutes and 3.18 seconds (3.18s).
+[0m21:44:17.944907 [debug] [MainThread]: Command end result
+[0m21:44:18.092852 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\manifest.json
+[0m21:44:18.105735 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\semantic_manifest.json
+[0m21:44:18.116111 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\osi_document.json
+[0m21:44:18.140452 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\run_results.json
+[0m21:44:18.142014 [info ] [MainThread]: 
+[0m21:44:18.144426 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:44:18.146268 [info ] [MainThread]: 
+[0m21:44:18.148232 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+[0m21:44:18.150542 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m21:44:18.156004 [debug] [MainThread]: Command `dbt run` succeeded at 21:44:18.155509 after 13.63 seconds
+[0m21:44:18.157649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBD5EBEC30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDA9BDCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CBDBCB7B30>]}
+[0m21:44:18.159087 [debug] [MainThread]: Flushing usage events
+[0m21:44:20.702961 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:44:30.296642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C407AE270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C42E03ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C42E03B10>]}
+
+
+============================== 21:44:30.307840 | 039259ff-474d-4df5-9a5a-ec4c7cdfad51 ==============================
+[0m21:44:30.307840 [info ] [MainThread]: Running with dbt=1.12.5
+[0m21:44:30.310193 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt', 'invocation_command': 'dbt test', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt\\logs'}
+[0m21:44:31.272386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '039259ff-474d-4df5-9a5a-ec4c7cdfad51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C40CDA650>]}
+[0m21:44:31.512190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '039259ff-474d-4df5-9a5a-ec4c7cdfad51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C3EE58050>]}
+[0m21:44:31.521435 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:44:32.415581 [debug] [MainThread]: checksum: 5460e6137fb750d7c78aa81e5c33d03b438ee5a9170cdf245c7aef95a9bf8fbb, vars: {}, profile: steel_dbt, target: dev, version: 1.12.5
+[0m21:44:33.187922 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:44:33.189055 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:44:33.190039 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:44:33.222767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '039259ff-474d-4df5-9a5a-ec4c7cdfad51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C431B5650>]}
+[0m21:44:33.721903 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\manifest.json
+[0m21:44:33.737730 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\semantic_manifest.json
+[0m21:44:33.858667 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\osi_document.json
+[0m21:44:33.960222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '039259ff-474d-4df5-9a5a-ec4c7cdfad51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C436159A0>]}
+[0m21:44:33.962198 [info ] [MainThread]: Found 7 models, 13 data tests, 500 macros
+[0m21:44:33.966096 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '039259ff-474d-4df5-9a5a-ec4c7cdfad51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C43609B70>]}
+[0m21:44:33.980924 [info ] [MainThread]: 
+[0m21:44:33.985825 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:44:33.987495 [info ] [MainThread]: 
+[0m21:44:33.992377 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:44:34.020732 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_steel_main'
+[0m21:44:34.393159 [debug] [ThreadPool]: Using duckdb connection "list_steel_main"
+[0m21:44:34.395098 [debug] [ThreadPool]: On list_steel_main: BEGIN
+[0m21:44:34.396106 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:44:34.486777 [debug] [ThreadPool]: SQL status: OK in 0.091 seconds
+[0m21:44:34.487679 [debug] [ThreadPool]: Using duckdb connection "list_steel_main"
+[0m21:44:34.488990 [debug] [ThreadPool]: On list_steel_main: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "connection_name": "list_steel_main"} */
+select
+      'steel' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'steel'
+  
+[0m21:44:34.510292 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m21:44:34.518062 [debug] [ThreadPool]: On list_steel_main: ROLLBACK
+[0m21:44:34.520372 [debug] [ThreadPool]: On list_steel_main: Close
+[0m21:44:34.528609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '039259ff-474d-4df5-9a5a-ec4c7cdfad51', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C43815D90>]}
+[0m21:44:34.530206 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:34.531932 [debug] [MainThread]: On master: BEGIN
+[0m21:44:34.533249 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:44:34.535081 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m21:44:34.535963 [debug] [MainThread]: On master: COMMIT
+[0m21:44:34.536673 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:34.537889 [debug] [MainThread]: On master: COMMIT
+[0m21:44:34.539305 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:44:34.540471 [debug] [MainThread]: On master: Close
+[0m21:44:34.555501 [debug] [Thread-1 (]: Began running node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:44:34.556898 [info ] [Thread-1 (]: 1 of 13 START test accepted_values_silver_plant_shift__A__B__C ................. [RUN]
+[0m21:44:34.560837 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9'
+[0m21:44:34.562794 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:44:34.686280 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9"
+[0m21:44:34.690915 [debug] [Thread-1 (]: Began executing node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:44:34.778773 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9"
+[0m21:44:34.784067 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9"
+[0m21:44:34.785953 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9: BEGIN
+[0m21:44:34.787461 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:44:34.790166 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:34.791814 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9"
+[0m21:44:34.793551 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        shift as value_field,
+        count(*) as n_records
+
+    from "steel"."main"."silver_plant"
+    group by shift
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'A','B','C'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:34.804000 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m21:44:34.821813 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9: ROLLBACK
+[0m21:44:34.824780 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9: Close
+[0m21:44:34.827693 [info ] [Thread-1 (]: 1 of 13 PASS accepted_values_silver_plant_shift__A__B__C ....................... [[32mPASS[0m in 0.27s]
+[0m21:44:34.830617 [debug] [Thread-1 (]: Finished running node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:44:34.832444 [debug] [Thread-1 (]: Began running node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:44:34.834379 [info ] [Thread-1 (]: 2 of 13 START test accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load  [RUN]
+[0m21:44:34.836704 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9, now test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed)
+[0m21:44:34.838526 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:44:34.918952 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed"
+[0m21:44:34.922797 [debug] [Thread-1 (]: Began executing node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:44:34.929884 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed"
+[0m21:44:34.933215 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed"
+[0m21:44:34.934382 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed: BEGIN
+[0m21:44:34.935993 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:34.938440 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:34.940029 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed"
+[0m21:44:34.941848 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        load_type as value_field,
+        count(*) as n_records
+
+    from "steel"."main"."stg_energy"
+    group by load_type
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Light_Load','Medium_Load','Maximum_Load'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:35.250176 [debug] [Thread-1 (]: SQL status: OK in 0.307 seconds
+[0m21:44:35.258229 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed: ROLLBACK
+[0m21:44:35.261933 [debug] [Thread-1 (]: On test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed: Close
+[0m21:44:35.264597 [info ] [Thread-1 (]: 2 of 13 PASS accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load  [[32mPASS[0m in 0.43s]
+[0m21:44:35.267521 [debug] [Thread-1 (]: Finished running node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:44:35.269287 [debug] [Thread-1 (]: Began running node test.steel_dbt.assert_no_negative_values
+[0m21:44:35.270698 [info ] [Thread-1 (]: 3 of 13 START test assert_no_negative_values ................................... [RUN]
+[0m21:44:35.272805 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed, now test.steel_dbt.assert_no_negative_values)
+[0m21:44:35.275066 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.assert_no_negative_values
+[0m21:44:35.284451 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.assert_no_negative_values"
+[0m21:44:35.288655 [debug] [Thread-1 (]: Began executing node test.steel_dbt.assert_no_negative_values
+[0m21:44:35.297644 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.assert_no_negative_values"
+[0m21:44:35.302148 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.assert_no_negative_values"
+[0m21:44:35.303520 [debug] [Thread-1 (]: On test.steel_dbt.assert_no_negative_values: BEGIN
+[0m21:44:35.305070 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:35.307275 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:35.309419 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.assert_no_negative_values"
+[0m21:44:35.311570 [debug] [Thread-1 (]: On test.steel_dbt.assert_no_negative_values: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.assert_no_negative_values"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Fails if any row has negative energy or negative tonnage
+select *
+from "steel"."main"."silver_plant"
+where usage_kwh < 0
+   or tonnes_produced < 0
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:35.315566 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:35.320952 [debug] [Thread-1 (]: On test.steel_dbt.assert_no_negative_values: ROLLBACK
+[0m21:44:35.323328 [debug] [Thread-1 (]: On test.steel_dbt.assert_no_negative_values: Close
+[0m21:44:35.327091 [info ] [Thread-1 (]: 3 of 13 PASS assert_no_negative_values ......................................... [[32mPASS[0m in 0.05s]
+[0m21:44:35.329740 [debug] [Thread-1 (]: Finished running node test.steel_dbt.assert_no_negative_values
+[0m21:44:35.331493 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:44:35.333089 [info ] [Thread-1 (]: 4 of 13 START test not_null_gold_daily_kpis_date ............................... [RUN]
+[0m21:44:35.335208 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.assert_no_negative_values, now test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840)
+[0m21:44:35.336990 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:44:35.383302 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840"
+[0m21:44:35.386893 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:44:35.395075 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840"
+[0m21:44:35.399553 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840"
+[0m21:44:35.400926 [debug] [Thread-1 (]: On test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840: BEGIN
+[0m21:44:35.402669 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:35.405132 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:35.406154 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840"
+[0m21:44:35.407009 [debug] [Thread-1 (]: On test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date
+from "steel"."main"."gold_daily_kpis"
+where date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:35.411073 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:35.417020 [debug] [Thread-1 (]: On test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840: ROLLBACK
+[0m21:44:35.419285 [debug] [Thread-1 (]: On test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840: Close
+[0m21:44:35.421751 [info ] [Thread-1 (]: 4 of 13 PASS not_null_gold_daily_kpis_date ..................................... [[32mPASS[0m in 0.09s]
+[0m21:44:35.424900 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:44:35.426589 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:44:35.428008 [info ] [Thread-1 (]: 5 of 13 START test not_null_silver_plant_ts .................................... [RUN]
+[0m21:44:35.429981 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840, now test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a)
+[0m21:44:35.431509 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:44:35.464268 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a"
+[0m21:44:35.467398 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:44:35.472449 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a"
+[0m21:44:35.477265 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a"
+[0m21:44:35.478954 [debug] [Thread-1 (]: On test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a: BEGIN
+[0m21:44:35.480555 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:35.482962 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:35.484254 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a"
+[0m21:44:35.485915 [debug] [Thread-1 (]: On test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ts
+from "steel"."main"."silver_plant"
+where ts is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:35.489000 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:35.494948 [debug] [Thread-1 (]: On test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a: ROLLBACK
+[0m21:44:35.497319 [debug] [Thread-1 (]: On test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a: Close
+[0m21:44:35.500201 [info ] [Thread-1 (]: 5 of 13 PASS not_null_silver_plant_ts .......................................... [[32mPASS[0m in 0.07s]
+[0m21:44:35.502764 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:44:35.505287 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:44:35.506905 [info ] [Thread-1 (]: 6 of 13 START test not_null_stg_energy_ts ...................................... [RUN]
+[0m21:44:35.509702 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a, now test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94)
+[0m21:44:35.512230 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:44:35.540159 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94"
+[0m21:44:35.545428 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:44:35.553025 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94"
+[0m21:44:35.557601 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94"
+[0m21:44:35.559740 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94: BEGIN
+[0m21:44:35.561412 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:35.563321 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:35.564354 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94"
+[0m21:44:35.565417 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ts
+from "steel"."main"."stg_energy"
+where ts is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:35.838642 [debug] [Thread-1 (]: SQL status: OK in 0.272 seconds
+[0m21:44:35.845136 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94: ROLLBACK
+[0m21:44:35.847205 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94: Close
+[0m21:44:35.849152 [info ] [Thread-1 (]: 6 of 13 PASS not_null_stg_energy_ts ............................................ [[32mPASS[0m in 0.34s]
+[0m21:44:35.852056 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:44:35.853737 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:44:35.855588 [info ] [Thread-1 (]: 7 of 13 START test not_null_stg_energy_usage_kwh ............................... [RUN]
+[0m21:44:35.858277 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94, now test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad)
+[0m21:44:35.860124 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:44:35.887716 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad"
+[0m21:44:35.891466 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:44:35.897913 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad"
+[0m21:44:35.901716 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad"
+[0m21:44:35.903072 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad: BEGIN
+[0m21:44:35.904534 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:35.907121 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:35.909331 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad"
+[0m21:44:35.911319 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select usage_kwh
+from "steel"."main"."stg_energy"
+where usage_kwh is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:36.248963 [debug] [Thread-1 (]: SQL status: OK in 0.336 seconds
+[0m21:44:36.258983 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad: ROLLBACK
+[0m21:44:36.262318 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad: Close
+[0m21:44:36.265939 [info ] [Thread-1 (]: 7 of 13 PASS not_null_stg_energy_usage_kwh ..................................... [[32mPASS[0m in 0.41s]
+[0m21:44:36.268727 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:44:36.270651 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:44:36.272517 [info ] [Thread-1 (]: 8 of 13 START test not_null_stg_production_tonnes_produced ..................... [RUN]
+[0m21:44:36.274859 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad, now test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5)
+[0m21:44:36.277277 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:44:36.317103 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5"
+[0m21:44:36.321182 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:44:36.329654 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5"
+[0m21:44:36.338750 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5"
+[0m21:44:36.345685 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5: BEGIN
+[0m21:44:36.348884 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:36.353922 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m21:44:36.355322 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5"
+[0m21:44:36.358669 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select tonnes_produced
+from "steel"."main"."stg_production"
+where tonnes_produced is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:36.827050 [debug] [Thread-1 (]: SQL status: OK in 0.467 seconds
+[0m21:44:36.832874 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5: ROLLBACK
+[0m21:44:36.834958 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5: Close
+[0m21:44:36.837168 [info ] [Thread-1 (]: 8 of 13 PASS not_null_stg_production_tonnes_produced ........................... [[32mPASS[0m in 0.56s]
+[0m21:44:36.839342 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:44:36.840779 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:44:36.842241 [info ] [Thread-1 (]: 9 of 13 START test not_null_stg_production_ts .................................. [RUN]
+[0m21:44:36.845958 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5, now test.steel_dbt.not_null_stg_production_ts.9b458ebeaf)
+[0m21:44:36.847324 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:44:36.880897 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_production_ts.9b458ebeaf"
+[0m21:44:36.884172 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:44:36.890378 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.not_null_stg_production_ts.9b458ebeaf"
+[0m21:44:36.894104 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_production_ts.9b458ebeaf"
+[0m21:44:36.899887 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_ts.9b458ebeaf: BEGIN
+[0m21:44:36.901612 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:36.903818 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:36.905186 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.not_null_stg_production_ts.9b458ebeaf"
+[0m21:44:36.906582 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_ts.9b458ebeaf: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.not_null_stg_production_ts.9b458ebeaf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ts
+from "steel"."main"."stg_production"
+where ts is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:37.273120 [debug] [Thread-1 (]: SQL status: OK in 0.365 seconds
+[0m21:44:37.277632 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_ts.9b458ebeaf: ROLLBACK
+[0m21:44:37.279339 [debug] [Thread-1 (]: On test.steel_dbt.not_null_stg_production_ts.9b458ebeaf: Close
+[0m21:44:37.281161 [info ] [Thread-1 (]: 9 of 13 PASS not_null_stg_production_ts ........................................ [[32mPASS[0m in 0.44s]
+[0m21:44:37.282854 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:44:37.284054 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:44:37.285301 [info ] [Thread-1 (]: 10 of 13 START test unique_gold_daily_kpis_date ................................ [RUN]
+[0m21:44:37.286617 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_production_ts.9b458ebeaf, now test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a)
+[0m21:44:37.287502 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:44:37.324960 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a"
+[0m21:44:37.329628 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:44:37.337583 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a"
+[0m21:44:37.341446 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a"
+[0m21:44:37.342756 [debug] [Thread-1 (]: On test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a: BEGIN
+[0m21:44:37.343916 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:37.345783 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:37.347030 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a"
+[0m21:44:37.348322 [debug] [Thread-1 (]: On test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    date as unique_field,
+    count(*) as n_records
+
+from "steel"."main"."gold_daily_kpis"
+where date is not null
+group by date
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:37.352308 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:44:37.356335 [debug] [Thread-1 (]: On test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a: ROLLBACK
+[0m21:44:37.358288 [debug] [Thread-1 (]: On test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a: Close
+[0m21:44:37.360053 [info ] [Thread-1 (]: 10 of 13 PASS unique_gold_daily_kpis_date ...................................... [[32mPASS[0m in 0.07s]
+[0m21:44:37.361981 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:44:37.363335 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:44:37.364558 [info ] [Thread-1 (]: 11 of 13 START test unique_silver_plant_ts ..................................... [RUN]
+[0m21:44:37.365918 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a, now test.steel_dbt.unique_silver_plant_ts.1191147209)
+[0m21:44:37.366814 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:44:37.391497 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_silver_plant_ts.1191147209"
+[0m21:44:37.395819 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:44:37.400796 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.unique_silver_plant_ts.1191147209"
+[0m21:44:37.403853 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_silver_plant_ts.1191147209"
+[0m21:44:37.405221 [debug] [Thread-1 (]: On test.steel_dbt.unique_silver_plant_ts.1191147209: BEGIN
+[0m21:44:37.406226 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:37.408417 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:37.409455 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_silver_plant_ts.1191147209"
+[0m21:44:37.410622 [debug] [Thread-1 (]: On test.steel_dbt.unique_silver_plant_ts.1191147209: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.unique_silver_plant_ts.1191147209"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    ts as unique_field,
+    count(*) as n_records
+
+from "steel"."main"."silver_plant"
+where ts is not null
+group by ts
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:37.421890 [debug] [Thread-1 (]: SQL status: OK in 0.010 seconds
+[0m21:44:37.426449 [debug] [Thread-1 (]: On test.steel_dbt.unique_silver_plant_ts.1191147209: ROLLBACK
+[0m21:44:37.427903 [debug] [Thread-1 (]: On test.steel_dbt.unique_silver_plant_ts.1191147209: Close
+[0m21:44:37.429492 [info ] [Thread-1 (]: 11 of 13 PASS unique_silver_plant_ts ........................................... [[32mPASS[0m in 0.06s]
+[0m21:44:37.431230 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:44:37.432209 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:44:37.433211 [info ] [Thread-1 (]: 12 of 13 START test unique_stg_energy_ts ....................................... [RUN]
+[0m21:44:37.434634 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.unique_silver_plant_ts.1191147209, now test.steel_dbt.unique_stg_energy_ts.e5da1b011e)
+[0m21:44:37.435710 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:44:37.464657 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_stg_energy_ts.e5da1b011e"
+[0m21:44:37.468232 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:44:37.473288 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.unique_stg_energy_ts.e5da1b011e"
+[0m21:44:37.477236 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_stg_energy_ts.e5da1b011e"
+[0m21:44:37.478522 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_energy_ts.e5da1b011e: BEGIN
+[0m21:44:37.480058 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:37.481799 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:37.482843 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_stg_energy_ts.e5da1b011e"
+[0m21:44:37.484020 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_energy_ts.e5da1b011e: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.unique_stg_energy_ts.e5da1b011e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    ts as unique_field,
+    count(*) as n_records
+
+from "steel"."main"."stg_energy"
+where ts is not null
+group by ts
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:37.772260 [debug] [Thread-1 (]: SQL status: OK in 0.287 seconds
+[0m21:44:37.778065 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_energy_ts.e5da1b011e: ROLLBACK
+[0m21:44:37.779967 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_energy_ts.e5da1b011e: Close
+[0m21:44:37.781898 [info ] [Thread-1 (]: 12 of 13 PASS unique_stg_energy_ts ............................................. [[32mPASS[0m in 0.35s]
+[0m21:44:37.784217 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:44:37.785587 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:44:37.786579 [info ] [Thread-1 (]: 13 of 13 START test unique_stg_production_ts ................................... [RUN]
+[0m21:44:37.788113 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.unique_stg_energy_ts.e5da1b011e, now test.steel_dbt.unique_stg_production_ts.ba15cad541)
+[0m21:44:37.789214 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:44:37.806747 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_stg_production_ts.ba15cad541"
+[0m21:44:37.811535 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:44:37.817773 [debug] [Thread-1 (]: Writing runtime sql for node "test.steel_dbt.unique_stg_production_ts.ba15cad541"
+[0m21:44:37.821202 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_stg_production_ts.ba15cad541"
+[0m21:44:37.822523 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_production_ts.ba15cad541: BEGIN
+[0m21:44:37.823947 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:44:37.825965 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:44:37.827119 [debug] [Thread-1 (]: Using duckdb connection "test.steel_dbt.unique_stg_production_ts.ba15cad541"
+[0m21:44:37.828197 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_production_ts.ba15cad541: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "node_id": "test.steel_dbt.unique_stg_production_ts.ba15cad541"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    ts as unique_field,
+    count(*) as n_records
+
+from "steel"."main"."stg_production"
+where ts is not null
+group by ts
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:44:38.126453 [debug] [Thread-1 (]: SQL status: OK in 0.297 seconds
+[0m21:44:38.130949 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_production_ts.ba15cad541: ROLLBACK
+[0m21:44:38.132472 [debug] [Thread-1 (]: On test.steel_dbt.unique_stg_production_ts.ba15cad541: Close
+[0m21:44:38.134149 [info ] [Thread-1 (]: 13 of 13 PASS unique_stg_production_ts ......................................... [[32mPASS[0m in 0.35s]
+[0m21:44:38.136930 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:44:38.140727 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:38.142113 [debug] [MainThread]: On master: BEGIN
+[0m21:44:38.143172 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:44:38.145057 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m21:44:38.146058 [debug] [MainThread]: On master: COMMIT
+[0m21:44:38.147122 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:44:38.148133 [debug] [MainThread]: On master: COMMIT
+[0m21:44:38.150052 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:44:38.151450 [debug] [MainThread]: On master: Close
+[0m21:44:38.153246 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:44:38.154302 [debug] [MainThread]: Connection 'list_steel_main' was properly closed.
+[0m21:44:38.155205 [debug] [MainThread]: Connection 'test.steel_dbt.unique_stg_production_ts.ba15cad541' was properly closed.
+[0m21:44:38.156248 [info ] [MainThread]: 
+[0m21:44:38.157765 [info ] [MainThread]: Finished running 13 data tests in 0 hours 0 minutes and 4.17 seconds (4.17s).
+[0m21:44:38.167199 [debug] [MainThread]: Command end result
+[0m21:44:38.323420 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\manifest.json
+[0m21:44:38.338406 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\semantic_manifest.json
+[0m21:44:38.349493 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\osi_document.json
+[0m21:44:38.379447 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\run_results.json
+[0m21:44:38.380804 [info ] [MainThread]: 
+[0m21:44:38.382559 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:44:38.384039 [info ] [MainThread]: 
+[0m21:44:38.385176 [info ] [MainThread]: Done. PASS=13 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=13
+[0m21:44:38.389235 [debug] [MainThread]: Command `dbt test` succeeded at 21:44:38.388792 after 8.60 seconds
+[0m21:44:38.390871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C42C590D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C43676620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017C436741B0>]}
+[0m21:44:38.392645 [debug] [MainThread]: Flushing usage events
+[0m21:44:40.570697 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:45:29.535282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0D1EE270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0F843ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0F843B10>]}
+
+
+============================== 21:45:29.544298 | 014b850f-ec9b-46de-827e-b4974d91b4bf ==============================
+[0m21:45:29.544298 [info ] [MainThread]: Running with dbt=1.12.5
+[0m21:45:29.545582 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt docs generate', 'log_path': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt\\logs'}
+[0m21:45:30.115893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '014b850f-ec9b-46de-827e-b4974d91b4bf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0D70A650>]}
+[0m21:45:30.270197 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '014b850f-ec9b-46de-827e-b4974d91b4bf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0B8B8050>]}
+[0m21:45:30.276515 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:45:31.004672 [debug] [MainThread]: checksum: 5460e6137fb750d7c78aa81e5c33d03b438ee5a9170cdf245c7aef95a9bf8fbb, vars: {}, profile: steel_dbt, target: dev, version: 1.12.5
+[0m21:45:31.458206 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:45:31.458982 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:45:31.459540 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:45:31.481065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '014b850f-ec9b-46de-827e-b4974d91b4bf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0FBC5650>]}
+[0m21:45:31.600663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '014b850f-ec9b-46de-827e-b4974d91b4bf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0FD808C0>]}
+[0m21:45:31.602829 [info ] [MainThread]: Found 7 models, 13 data tests, 500 macros
+[0m21:45:31.604232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '014b850f-ec9b-46de-827e-b4974d91b4bf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0FF62CF0>]}
+[0m21:45:31.609491 [info ] [MainThread]: 
+[0m21:45:31.610598 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:45:31.611565 [info ] [MainThread]: 
+[0m21:45:31.612937 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:45:31.624481 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_steel_main'
+[0m21:45:31.813402 [debug] [ThreadPool]: Using duckdb connection "list_steel_main"
+[0m21:45:31.814141 [debug] [ThreadPool]: On list_steel_main: BEGIN
+[0m21:45:31.814773 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:45:31.853035 [debug] [ThreadPool]: SQL status: OK in 0.038 seconds
+[0m21:45:31.853794 [debug] [ThreadPool]: Using duckdb connection "list_steel_main"
+[0m21:45:31.854424 [debug] [ThreadPool]: On list_steel_main: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "connection_name": "list_steel_main"} */
+select
+      'steel' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'steel'
+  
+[0m21:45:31.863281 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m21:45:31.866763 [debug] [ThreadPool]: On list_steel_main: ROLLBACK
+[0m21:45:31.868124 [debug] [ThreadPool]: On list_steel_main: Close
+[0m21:45:31.872117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '014b850f-ec9b-46de-827e-b4974d91b4bf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0FE43EE0>]}
+[0m21:45:31.879477 [debug] [Thread-1 (]: Began running node model.steel_dbt.stg_energy
+[0m21:45:31.880680 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.steel_dbt.stg_energy'
+[0m21:45:31.881430 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.stg_energy
+[0m21:45:31.892353 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.stg_energy"
+[0m21:45:31.894532 [debug] [Thread-1 (]: Began executing node model.steel_dbt.stg_energy
+[0m21:45:31.896469 [debug] [Thread-1 (]: Finished running node model.steel_dbt.stg_energy
+[0m21:45:31.897301 [debug] [Thread-1 (]: Began running node model.steel_dbt.stg_production
+[0m21:45:31.898537 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.stg_energy, now model.steel_dbt.stg_production)
+[0m21:45:31.899358 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.stg_production
+[0m21:45:31.901327 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.stg_production"
+[0m21:45:31.903454 [debug] [Thread-1 (]: Began executing node model.steel_dbt.stg_production
+[0m21:45:31.905390 [debug] [Thread-1 (]: Finished running node model.steel_dbt.stg_production
+[0m21:45:31.906332 [debug] [Thread-1 (]: Began running node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:45:31.907203 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.stg_production, now test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed)
+[0m21:45:31.908305 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:45:31.959101 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed"
+[0m21:45:31.961411 [debug] [Thread-1 (]: Began executing node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:45:31.963637 [debug] [Thread-1 (]: Finished running node test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed
+[0m21:45:31.964484 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:45:31.965435 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.accepted_values_stg_energy_load_type__Light_Load__Medium_Load__Maximum_Load.35973690ed, now test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94)
+[0m21:45:31.966163 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:45:31.988974 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94"
+[0m21:45:31.991417 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:45:31.993236 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94
+[0m21:45:31.994076 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:45:31.995061 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_energy_ts.2fafb0fc94, now test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad)
+[0m21:45:31.995799 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:45:32.011633 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad"
+[0m21:45:32.014048 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:45:32.015657 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad
+[0m21:45:32.016554 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:45:32.017988 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_energy_usage_kwh.b473f2bfad, now test.steel_dbt.unique_stg_energy_ts.e5da1b011e)
+[0m21:45:32.018795 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:45:32.037744 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_stg_energy_ts.e5da1b011e"
+[0m21:45:32.040424 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:45:32.042947 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_stg_energy_ts.e5da1b011e
+[0m21:45:32.043874 [debug] [Thread-1 (]: Began running node model.steel_dbt.silver_plant
+[0m21:45:32.044866 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.unique_stg_energy_ts.e5da1b011e, now model.steel_dbt.silver_plant)
+[0m21:45:32.045620 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.silver_plant
+[0m21:45:32.049557 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.silver_plant"
+[0m21:45:32.051977 [debug] [Thread-1 (]: Began executing node model.steel_dbt.silver_plant
+[0m21:45:32.054536 [debug] [Thread-1 (]: Finished running node model.steel_dbt.silver_plant
+[0m21:45:32.055508 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:45:32.056532 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.silver_plant, now test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5)
+[0m21:45:32.057523 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:45:32.070165 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5"
+[0m21:45:32.072435 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:45:32.074232 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5
+[0m21:45:32.075059 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:45:32.075999 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_production_tonnes_produced.a937d208b5, now test.steel_dbt.not_null_stg_production_ts.9b458ebeaf)
+[0m21:45:32.076723 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:45:32.090880 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_stg_production_ts.9b458ebeaf"
+[0m21:45:32.093066 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:45:32.094793 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_stg_production_ts.9b458ebeaf
+[0m21:45:32.095615 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:45:32.096538 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_stg_production_ts.9b458ebeaf, now test.steel_dbt.unique_stg_production_ts.ba15cad541)
+[0m21:45:32.097257 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:45:32.111089 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_stg_production_ts.ba15cad541"
+[0m21:45:32.113598 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:45:32.115387 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_stg_production_ts.ba15cad541
+[0m21:45:32.116204 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_daily_kpis
+[0m21:45:32.117252 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.unique_stg_production_ts.ba15cad541, now model.steel_dbt.gold_daily_kpis)
+[0m21:45:32.118013 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_daily_kpis
+[0m21:45:32.121786 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_daily_kpis"
+[0m21:45:32.123971 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_daily_kpis
+[0m21:45:32.125626 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_daily_kpis
+[0m21:45:32.126439 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_downtime_pareto
+[0m21:45:32.127423 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.gold_daily_kpis, now model.steel_dbt.gold_downtime_pareto)
+[0m21:45:32.128347 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_downtime_pareto
+[0m21:45:32.131745 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_downtime_pareto"
+[0m21:45:32.134115 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_downtime_pareto
+[0m21:45:32.136259 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_downtime_pareto
+[0m21:45:32.137071 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_load_type_summary
+[0m21:45:32.137898 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.gold_downtime_pareto, now model.steel_dbt.gold_load_type_summary)
+[0m21:45:32.138614 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_load_type_summary
+[0m21:45:32.142071 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_load_type_summary"
+[0m21:45:32.144428 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_load_type_summary
+[0m21:45:32.146093 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_load_type_summary
+[0m21:45:32.146949 [debug] [Thread-1 (]: Began running node model.steel_dbt.gold_shift_summary
+[0m21:45:32.147915 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.gold_load_type_summary, now model.steel_dbt.gold_shift_summary)
+[0m21:45:32.148632 [debug] [Thread-1 (]: Began compiling node model.steel_dbt.gold_shift_summary
+[0m21:45:32.152231 [debug] [Thread-1 (]: Writing injected SQL for node "model.steel_dbt.gold_shift_summary"
+[0m21:45:32.154333 [debug] [Thread-1 (]: Began executing node model.steel_dbt.gold_shift_summary
+[0m21:45:32.156046 [debug] [Thread-1 (]: Finished running node model.steel_dbt.gold_shift_summary
+[0m21:45:32.156863 [debug] [Thread-1 (]: Began running node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:45:32.157790 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.steel_dbt.gold_shift_summary, now test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9)
+[0m21:45:32.158520 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:45:32.199193 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9"
+[0m21:45:32.202275 [debug] [Thread-1 (]: Began executing node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:45:32.204490 [debug] [Thread-1 (]: Finished running node test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9
+[0m21:45:32.205343 [debug] [Thread-1 (]: Began running node test.steel_dbt.assert_no_negative_values
+[0m21:45:32.206182 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.accepted_values_silver_plant_shift__A__B__C.64bc9012a9, now test.steel_dbt.assert_no_negative_values)
+[0m21:45:32.207041 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.assert_no_negative_values
+[0m21:45:32.210424 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.assert_no_negative_values"
+[0m21:45:32.212676 [debug] [Thread-1 (]: Began executing node test.steel_dbt.assert_no_negative_values
+[0m21:45:32.214557 [debug] [Thread-1 (]: Finished running node test.steel_dbt.assert_no_negative_values
+[0m21:45:32.215405 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:45:32.216414 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.assert_no_negative_values, now test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a)
+[0m21:45:32.217461 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:45:32.230020 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a"
+[0m21:45:32.232346 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:45:32.234422 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a
+[0m21:45:32.235428 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:45:32.236393 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_silver_plant_ts.6ae35bf08a, now test.steel_dbt.unique_silver_plant_ts.1191147209)
+[0m21:45:32.237138 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:45:32.249812 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_silver_plant_ts.1191147209"
+[0m21:45:32.252517 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:45:32.254755 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_silver_plant_ts.1191147209
+[0m21:45:32.255994 [debug] [Thread-1 (]: Began running node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:45:32.257223 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.unique_silver_plant_ts.1191147209, now test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840)
+[0m21:45:32.257992 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:45:32.270309 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840"
+[0m21:45:32.272607 [debug] [Thread-1 (]: Began executing node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:45:32.274183 [debug] [Thread-1 (]: Finished running node test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840
+[0m21:45:32.274993 [debug] [Thread-1 (]: Began running node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:45:32.275954 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.steel_dbt.not_null_gold_daily_kpis_date.c037a5d840, now test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a)
+[0m21:45:32.276693 [debug] [Thread-1 (]: Began compiling node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:45:32.292193 [debug] [Thread-1 (]: Writing injected SQL for node "test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a"
+[0m21:45:32.294498 [debug] [Thread-1 (]: Began executing node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:45:32.296433 [debug] [Thread-1 (]: Finished running node test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a
+[0m21:45:32.298388 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:45:32.299017 [debug] [MainThread]: Connection 'list_steel_main' was properly closed.
+[0m21:45:32.299731 [debug] [MainThread]: Connection 'test.steel_dbt.unique_gold_daily_kpis_date.6c2ec0e85a' was properly closed.
+[0m21:45:32.309324 [debug] [MainThread]: Command end result
+[0m21:45:32.566948 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\manifest.json
+[0m21:45:32.577448 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\semantic_manifest.json
+[0m21:45:32.654430 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\osi_document.json
+[0m21:45:32.674935 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\run_results.json
+[0m21:45:33.065293 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m21:45:33.066012 [info ] [MainThread]: Building catalog
+[0m21:45:33.087400 [debug] [ThreadPool]: Acquiring new duckdb connection 'steel.information_schema'
+[0m21:45:33.128917 [debug] [ThreadPool]: Using duckdb connection "steel.information_schema"
+[0m21:45:33.130607 [debug] [ThreadPool]: On steel.information_schema: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "steel_dbt", "target_name": "dev", "connection_name": "steel.information_schema"} */
+
+    
+    with tables as (
+      select *
+    from (
+        select
+            t.database_name as table_database,
+            t.schema_name as table_schema,
+            t.table_name as table_name,
+            'BASE TABLE' as table_type,
+            t.comment as table_comment
+        from duckdb_tables() t
+        where upper(t.database_name) = upper('steel')
+
+        union all
+
+        select
+            v.database_name as table_database,
+            v.schema_name as table_schema,
+            v.view_name as table_name,
+            'VIEW' as table_type,
+            v.comment as table_comment
+        from duckdb_views() v
+        where upper(v.database_name) = upper('steel')
+    ) catalog_tables
+      
+        where (
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_load_type_summary')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_energy')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_production')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_downtime_pareto')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_daily_kpis')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_shift_summary')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('silver_plant')
+                ))
+    
+    ),
+    columns as (
+      select *
+    from (
+        select
+            c.database_name as table_database,
+            c.schema_name as table_schema,
+            c.table_name as table_name,
+            c.column_name as column_name,
+            c.column_index as column_index,
+            c.data_type as column_type,
+            c.comment as column_comment
+        from duckdb_columns() c
+        where upper(c.database_name) = upper('steel')
+    ) catalog_columns
+      
+        where (
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_load_type_summary')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_energy')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_production')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_downtime_pareto')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_daily_kpis')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('gold_shift_summary')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('silver_plant')
+                ))
+    
+    )
+    select
+        tables.table_database,
+        tables.table_schema,
+        tables.table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+        null as table_owner
+    from tables
+    join columns using (table_database, table_schema, table_name)
+    order by table_schema, table_name, column_index
+  
+  
+[0m21:45:33.132271 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:45:33.185075 [debug] [ThreadPool]: SQL status: OK in 0.053 seconds
+[0m21:45:33.196522 [debug] [ThreadPool]: On steel.information_schema: Close
+[0m21:45:33.226915 [debug] [MainThread]: Wrote artifact CatalogArtifact to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\catalog.json
+[0m21:45:33.320531 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\manifest.json
+[0m21:45:33.329487 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\semantic_manifest.json
+[0m21:45:33.339217 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\osi_document.json
+[0m21:45:33.340347 [info ] [MainThread]: Catalog written to C:\Users\User\OneDrive\Desktop\steel-lakehouse\steel_dbt\target\catalog.json
+[0m21:45:33.343551 [debug] [MainThread]: Command `dbt docs generate` succeeded at 21:45:33.343233 after 4.14 seconds
+[0m21:45:33.344278 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m21:45:33.344873 [debug] [MainThread]: Connection 'steel.information_schema' was properly closed.
+[0m21:45:33.345542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C0F6990D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C113543C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C11354AA0>]}
+[0m21:45:33.346277 [debug] [MainThread]: Flushing usage events
+[0m21:45:35.245745 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:46:07.954014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002545F8EE270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025461EF3ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025461EF3B10>]}
+
+
+============================== 21:46:07.963369 | 6ff5f8f4-4fc0-482f-bab5-6973d8651b6d ==============================
+[0m21:46:07.963369 [info ] [MainThread]: Running with dbt=1.12.5
+[0m21:46:07.964877 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt docs serve', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\User\\OneDrive\\Desktop\\steel-lakehouse\\steel_dbt\\logs'}
+[0m21:46:08.552483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6ff5f8f4-4fc0-482f-bab5-6973d8651b6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002545FE0A650>]}
+[0m21:46:08.724711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6ff5f8f4-4fc0-482f-bab5-6973d8651b6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002545DF98050>]}
+[0m21:51:17.791655 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m21:51:17.853426 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Lib\site-packages\dbt\cli\requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Lib\site-packages\dbt\cli\requires.py", line 295, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Lib\site-packages\dbt\cli\requires.py", line 340, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Lib\site-packages\dbt\cli\requires.py", line 387, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Lib\site-packages\dbt\cli\main.py", line 323, in docs_serve
+    results = task.run()
+  File "C:\Users\User\OneDrive\Desktop\steel-lakehouse\venv\Lib\site-packages\dbt\task\docs\serve.py", line 29, in run
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "C:\Program Files\Python313\Lib\selectors.py", line 314, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\selectors.py", line 305, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m21:51:17.856810 [debug] [MainThread]: Command `dbt docs serve` failed at 21:51:17.856472 after 310.25 seconds
+[0m21:51:17.857795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002546234A550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002546234A650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002546235DA90>]}
+[0m21:51:17.858680 [debug] [MainThread]: Flushing usage events
+[0m21:51:19.530703 [debug] [MainThread]: An error was encountered while trying to flush usage events
