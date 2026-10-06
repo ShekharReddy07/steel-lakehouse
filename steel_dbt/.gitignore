@@ -1,0 +1,5 @@
+
+steel_dbt/target/
+steel_dbt/logs/
+steel_dbt/.user.yml
+steel_dbt/dbt_packages/
