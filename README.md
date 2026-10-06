@@ -39,7 +39,7 @@ Pipeline fails if any of these are non-zero: duplicate timestamps (energy, produ
 
 ## Dashboard
 
-_Add screenshots here._
+![Dashboard](docs/dashboard.png)
 
 ## How to run
 
