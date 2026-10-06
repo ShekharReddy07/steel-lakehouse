@@ -41,6 +41,17 @@ Pipeline fails if any of these are non-zero: duplicate timestamps (energy, produ
 
 ![Dashboard](docs/dashboard.png)
 
+## dbt models and lineage
+
+The same silver and gold logic is also implemented as dbt models, with tests and generated docs.
+
+![Lineage](docs/lineage.png)
+
+Layer	Models
+Staging (views)	stg_energy, stg_production
+Silver (table)	silver_plant
+Gold (tables)	gold_daily_kpis, gold_load_type_summary, gold_downtime_pareto, gold_shift_summary
+
 ## How to run
 
 ```bash
@@ -66,7 +77,7 @@ data/                # git-ignored
 
 ## Roadmap
 
-- [ ] dbt models + tests + docs
+- [yes] dbt models + tests + docs
 - [ ] Load to S3, process in Databricks (Delta, Unity Catalog)
 - [ ] Streaming ingestion (Kafka / Kinesis)
 - [ ] Orchestration (Airflow / Databricks Workflows)
