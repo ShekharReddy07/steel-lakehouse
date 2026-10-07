@@ -1,14 +1,15 @@
-# Steel Plant Energy & Production Analytics Pipeline
+# Steel Plant Energy & Production Analytics Lakehouse
 
-End-to-end data pipeline (medallion architecture) that combines **real** steel plant energy data with **simulated** production and sensor data to compute energy efficiency, downtime and quality KPIs.
+End-to-end data engineering project (medallion architecture) that combines **real** steel plant energy data with **simulated** production and sensor data to compute energy efficiency, downtime and quality KPIs. The same pipeline runs locally (DuckDB + dbt), on AWS (S3 + Glue + Athena) and on Databricks (Delta Lake).
 
 ## Architecture
 
 ```
-Energy CSV (real, UCI)  ─┐
-                         ├─> Bronze (raw + ingest_ts) ─> Silver (typed, deduped, cleaned, joined) ─> Gold (KPI marts) ─> Power BI
-Simulator (production,  ─┘
-sensors, downtime, defects)
+Energy CSV (real, UCI) ─┐
+                        ├─> Bronze ─> Silver ─> Gold ─┬─> Power BI dashboard
+Simulator (production,  ─┘  (raw)     (clean,    (KPI  ├─> S3 + Glue + Athena (SQL on the lake)
+sensors, downtime,                    joined)    marts) └─> Databricks Delta tables
+defects)
 ```
 
 | Layer | What happens |
@@ -17,8 +18,8 @@ sensors, downtime, defects)
 | Silver | Deduplication, sensor anomaly flagging, type casting, shift derivation, join on timestamp |
 | Gold | Daily KPIs, load-type summary, downtime Pareto, shift summary |
 
-**Stack:** Python, pandas, DuckDB, Parquet, Power BI
-**Planned:** dbt, AWS S3, Databricks (Delta), streaming ingestion
+**Stack:** Python, pandas, DuckDB, dbt (dbt-duckdb), Parquet, AWS (S3, Glue, Athena), Databricks (Delta Lake, Unity Catalog), Power BI
+**Planned:** streaming ingestion, orchestration, CI
 
 ## Data
 
@@ -27,57 +28,95 @@ sensors, downtime, defects)
 
 > Production figures are simulated, so efficiency numbers reflect the simulator's assumptions, not a real plant.
 
-## Data quality checks
-
-Pipeline fails if any of these are non-zero: duplicate timestamps (energy, production), null timestamps, negative energy, negative tonnage, rows lost in join.
-
 ## Key findings
 
 - Maximum_Load is ~21% of intervals but ~45% of energy consumption.
 - Energy per tonne is ~23% worse at light load (56.4 kWh/t) than at max load (43.6 kWh/t).
 - ~34,000 kWh was consumed during downtime, led by material shortage and mechanical failure.
 
+Headline KPI (about 47.6 kWh per tonne) was cross-checked across four tools: Python/DuckDB, dbt, Athena and Databricks, plus the Power BI dashboard.
+
 ## Dashboard
 
 ![Dashboard](docs/dashboard.png)
 
-## dbt models and lineage
+## Data quality
 
-The same silver and gold logic is also implemented as dbt models, with tests and generated docs.
+- **Python pipeline:** fails on duplicate timestamps, null timestamps, negative energy, negative tonnage, or rows lost in the join.
+- **dbt:** 13 tests, including unique and not-null on timestamps and dates, accepted values for load type and shift, and a custom test for negative energy/tonnage.
+
+## dbt models and lineage
 
 ![Lineage](docs/lineage.png)
 
-Layer	Models
-Staging (views)	stg_energy, stg_production
-Silver (table)	silver_plant
-Gold (tables)	gold_daily_kpis, gold_load_type_summary, gold_downtime_pareto, gold_shift_summary
+| Layer | Models |
+|---|---|
+| Staging (views) | `stg_energy`, `stg_production` |
+| Silver (table) | `silver_plant` |
+| Gold (tables) | `gold_daily_kpis`, `gold_load_type_summary`, `gold_downtime_pareto`, `gold_shift_summary` |
+
+## Cloud: AWS S3 + Glue + Athena
+
+Pipeline outputs are stored in S3 (raw, bronze, silver, gold). A Glue crawler catalogs one folder per table, and Athena queries them with SQL.
+
+![S3 bucket](docs/s3_bucket.png)
+![Glue tables](docs/glue_tables.png)
+![Athena query](docs/athena_query.png)
+
+## Cloud: Databricks (Delta Lake)
+
+`databricks/medallion.py` is a notebook that reads the bronze Parquet files from a Unity Catalog Volume, builds silver and gold as Delta tables, and verifies the KPI.
+
+![Databricks tables](docs/databricks_tables.png)
+![Databricks notebook](docs/databricks_notebook.png)
+
+> **Note:** Databricks Free Edition limits access to external storage, so the bronze files were uploaded to a Volume instead of being read directly from S3. In a paid workspace the notebook would read from S3 through an external location.
 
 ## How to run
 
 ```bash
 python -m venv venv
 venv\Scripts\activate          # Mac/Linux: source venv/bin/activate
-pip install pandas numpy duckdb pyarrow
+pip install pandas numpy duckdb pyarrow dbt-duckdb
 
 # put the dataset CSV in data/raw/
 python -m simulator.simulate data/raw/Steel_industry_data.csv
 python -m pipeline.build data/raw/Steel_industry_data.csv
 ```
 
-Outputs are written to `data/bronze`, `data/silver`, `data/gold`.
+**dbt** (after the simulator has created `data/raw/production.csv`):
+
+```bash
+cd steel_dbt
+dbt run
+dbt test
+dbt docs generate
+dbt docs serve
+```
+
+**AWS:** `aws s3 sync data/<layer> s3://<your-bucket>/<layer>/`, then crawl with Glue and query in Athena.
+**Databricks:** import `databricks/medallion.py`, upload the bronze Parquet files to the Volume, run all cells.
 
 ## Project structure
 
 ```
-common.py            # shared loader
-simulator/simulate.py
-pipeline/build.py
-data/                # git-ignored
+common.py              # shared loader
+simulator/simulate.py  # production + sensor simulator
+pipeline/build.py      # Python/DuckDB medallion pipeline
+steel_dbt/             # dbt project (models, tests, docs)
+databricks/            # Delta Lake notebook
+bi/                    # Power BI dashboard (.pbix)
+docs/                  # screenshots
+data/                  # git-ignored
 ```
 
 ## Roadmap
 
-- [yes] dbt models + tests + docs
-- [ ] Load to S3, process in Databricks (Delta, Unity Catalog)
+- [x] Python + DuckDB medallion pipeline with quality checks
+- [x] Power BI dashboard
+- [x] dbt models + tests + docs
+- [x] AWS S3 + Glue + Athena
+- [x] Databricks Delta tables
+- [ ] GitHub Actions CI (dbt run + test)
+- [ ] Orchestration (Databricks Workflows / Airflow)
 - [ ] Streaming ingestion (Kafka / Kinesis)
-- [ ] Orchestration (Airflow / Databricks Workflows)
