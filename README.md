@@ -69,6 +69,7 @@ Pipeline outputs are stored in S3 (raw, bronze, silver, gold). A Glue crawler ca
 
 ![Databricks tables](docs/databricks_tables.png)
 ![Databricks notebook](docs/databricks_notebook.png)
+![Databricks volume](docs/databricks_volume.png)
 
 > **Note:** Databricks Free Edition limits access to external storage, so the bronze files were uploaded to a Volume instead of being read directly from S3. In a paid workspace the notebook would read from S3 through an external location.
 
